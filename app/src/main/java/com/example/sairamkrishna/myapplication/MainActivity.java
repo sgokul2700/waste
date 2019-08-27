@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 
 public class MainActivity extends Activity {
@@ -36,11 +37,14 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 if(ed1.getText().toString().equals("admin") &&
                         ed2.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(),
-                            "Redirecting...",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(MainActivity.this, MainAdmin.class);
+                    startActivity(i);
+                }else if(ed1.getText().toString().equals("user") &&
+                        ed2.getText().toString().equals("user")){
+                    Intent f=new Intent(MainActivity.this, MainUser.class);
+                    startActivity(f);
                 }
+                else{Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();}
             }
         });
 

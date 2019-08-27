@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainUserOutput">
+
+    <TextView android:text = "Info" android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview"
+        android:textSize = "35dp"
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true" />
+
+    <TextView android:text = "Login:" android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview1"
+        android:layout_marginTop="60dp"
+        android:textSize = "25dp"
+        android:layout_below="@+id/textview" />
+
+    <TextView android:text = "Login:" android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview2"
+        android:layout_marginTop="60dp"
+        android:textSize = "25dp"
+        android:layout_below="@+id/textview1" />
+
+    <TextView android:text = "Login:" android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview3"
+        android:layout_marginTop="60dp"
+        android:textSize = "25dp"
+        android:layout_below="@+id/textview2" />
+
+    <EditText android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview4"
+        android:layout_marginTop="60dp"
+        android:textSize = "20dp"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal = "true" />
+
+    <EditText android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview5"
+        android:layout_marginTop="60dp"
+        android:textSize = "20dp"
+        android:layout_below="@+id/textview1"
+        android:layout_centerHorizontal = "true" />
+
+    <EditText android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview6"
+        android:layout_marginTop="60dp"
+        android:textSize = "20dp"
+        android:layout_below="@+id/textview2"
+        android:layout_centerHorizontal = "true" />
+
+</RelativeLayout>
