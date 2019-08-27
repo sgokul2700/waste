@@ -6,28 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainUserOutput">
 
-    <TextView android:text = "Info" android:layout_width="wrap_content"
+    <TextView android:text = "Waste Details" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview"
         android:textSize = "35dp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
-    <TextView android:text = "Login:" android:layout_width="wrap_content"
+    <TextView android:text = "Waste ID:" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview1"
         android:layout_marginTop="60dp"
         android:textSize = "25dp"
         android:layout_below="@+id/textview" />
 
-    <TextView android:text = "Login:" android:layout_width="wrap_content"
+    <TextView android:text = "Waste Type:" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview2"
         android:layout_marginTop="60dp"
         android:textSize = "25dp"
         android:layout_below="@+id/textview1" />
 
-    <TextView android:text = "Login:" android:layout_width="wrap_content"
+    <TextView android:text = "Level:" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview3"
         android:layout_marginTop="60dp"
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal = "true"
         android:layout_marginBottom="40dp"
-        android:text="Button"
+        android:text="Insert"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

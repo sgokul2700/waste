@@ -22,14 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal = "true"
         android:layout_marginBottom="40dp"
-        android:text="Button"
+        android:text="Location"
         android:layout_below = "@+id/textview1"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Waste"
         android:layout_marginBottom="40dp"
         android:layout_centerHorizontal = "true"
         android:layout_below = "@+id/button3"/>
@@ -38,7 +38,7 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Grievance"
         android:layout_marginBottom="40dp"
         android:layout_centerHorizontal = "true"
         android:layout_below = "@+id/button4"/>

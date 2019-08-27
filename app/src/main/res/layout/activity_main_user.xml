@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainUser">
 
-    <TextView android:text = "User" android:layout_width="wrap_content"
+    <TextView android:text = "Area" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview1"
         android:textSize = "35dp"
@@ -17,6 +17,7 @@
     <EditText
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
+        android:inputType="number"
         android:id = "@+id/editText"
         android:hint = "Enter Area ID"
         android:focusable = "true"
