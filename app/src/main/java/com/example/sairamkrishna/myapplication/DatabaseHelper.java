@@ -9,6 +9,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String databaseName = "student.db";
     public static final String area = "area";
+    public static final String nameKey = "waste_key";
+    public static final String nameWaste = "waste";
+    public static final String keycol_1 = "ID";
+    public static final String keycol_2 = "G_ID";
+    public static final String keycol_3 = "WASTE_ID";
     public static final String col_1 = "AREA_ID";
     public static final String col_2 = "TALUK_ID";
     public static final String col_3 = "AREA_NAME";
@@ -20,6 +25,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table "+area+" (AREA_ID integer, TALUK_ID integer, AREA_NAME text) ");
+        sqLiteDatabase.execSQL("create table "+nameKey+" (ID integer, G_ID integer, WASTE_ID integer) ");
+        sqLiteDatabase.execSQL("create table "+nameWaste+" (WASTE_ID integer, WASTE_TYPE text, LEVEL integer, METHOD text, SOLUTION text) ");
+
     }
 
     @Override
