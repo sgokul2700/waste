@@ -27,6 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("drop table if exists "+databaseName);
         onCreate(sqLiteDatabase);
     }
+    //nothing
     public boolean insertData(String areaId, String talukId, String areaName){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
