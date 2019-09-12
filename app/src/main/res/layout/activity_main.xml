@@ -6,28 +6,28 @@
     android:paddingTop = "5dp"
     android:paddingBottom = "5dp" tools:context = ".MainActivity">
 
-    <TextView android:text = "Login" android:layout_width="wrap_content"
+    <TextView android:text = "@string/login" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview"
-        android:textSize = "35dp"
+        android:textSize = "35sp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
     <TextView
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
-        android:text = "W M S"
+        android:text = "@string/app_title"
         android:id = "@+id/textView"
         android:layout_below = "@+id/textview"
         android:layout_centerHorizontal = "true"
         android:textColor = "#ff7aff24"
-        android:textSize = "35dp" />
+        android:textSize = "35sp" />
 
     <EditText
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/editText"
-        android:hint = "Enter Name"
+        android:hint = "@string/enter_name"
         android:inputType="text"
         android:focusable = "true"
         android:textColorHighlight = "#ff7eff15"
@@ -59,13 +59,13 @@
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
         android:textColorHint="#ffff299f"
-        android:hint="Password" />
+        android:hint="@string/password" />
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="login"
+        android:text="@string/login"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/textview"
@@ -74,7 +74,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exit"
+        android:text="@string/exit"
         android:id="@+id/button2"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textview"

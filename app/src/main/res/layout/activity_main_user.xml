@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".MainUser">
 
-    <TextView android:text = "Area" android:layout_width="wrap_content"
+    <TextView android:text = "@string/area" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview1"
-        android:textSize = "35dp"
+        android:textSize = "35sp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
@@ -19,7 +19,7 @@
         android:layout_height = "wrap_content"
         android:inputType="number"
         android:id = "@+id/editText"
-        android:hint = "Enter Area ID"
+        android:hint = "@string/enter_area"
         android:focusable = "true"
         android:textColorHighlight = "#ff7eff15"
         android:textColorHint = "#ffff25e6"
@@ -33,11 +33,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
+        android:text="@string/enter"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textview"
-        android:layout_toStartOf="@+id/textview"
         android:layout_centerHorizontal = "true"/>
 
 </RelativeLayout>

@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".MainAdmin">
 
-    <TextView android:text = "Admin" android:layout_width="wrap_content"
+    <TextView android:text = "@string/admin" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview1"
-        android:textSize = "35dp"
+        android:textSize = "35sp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:layout_alignParentTop = "true"
@@ -22,14 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal = "true"
         android:layout_marginBottom="40dp"
-        android:text="Location"
+        android:text="@string/location"
         android:layout_below = "@+id/textview1"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Waste"
+        android:text="@string/app_name"
         android:layout_marginBottom="40dp"
         android:layout_centerHorizontal = "true"
         android:layout_below = "@+id/button3"/>
@@ -38,7 +38,7 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Grievance"
+        android:text="@string/grievance"
         android:layout_marginBottom="40dp"
         android:layout_centerHorizontal = "true"
         android:layout_below = "@+id/button4"/>
