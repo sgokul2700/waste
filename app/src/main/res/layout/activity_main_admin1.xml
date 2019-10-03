@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainUserOutput">
 
-    <TextView android:text = "@string/area_details"
+    <TextView android:text = "Area details"
         android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview"
@@ -14,21 +14,21 @@
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
-    <TextView android:text = "@string/taluk_id" android:layout_width="wrap_content"
+    <TextView android:text = "Taluk id" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview1"
         android:layout_marginTop="60dp"
         android:textSize = "25sp"
         android:layout_below="@+id/textview" />
 
-    <TextView android:text = "@string/area_id" android:layout_width="wrap_content"
+    <TextView android:text = "Area id" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview2"
         android:layout_marginTop="60dp"
         android:textSize = "25sp"
         android:layout_below="@+id/textview1" />
 
-    <TextView android:text = "@string/area_name" android:layout_width="wrap_content"
+    <TextView android:text = "Area name" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview3"
         android:layout_marginTop="60dp"
