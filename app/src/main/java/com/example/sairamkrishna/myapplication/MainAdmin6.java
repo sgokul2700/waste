@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainAdmin2 extends AppCompatActivity {
+public class MainAdmin6 extends AppCompatActivity {
     String s1,s2,s3,s4;
     EditText ev1,ev2,ev3,ev4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_admin2);
+        setContentView(R.layout.activity_main_admin6);
         ev1=(EditText) findViewById(R.id.textview4);
         ev2=(EditText) findViewById(R.id.textview5);
         ev3=(EditText) findViewById(R.id.textview6);
@@ -23,12 +23,11 @@ public class MainAdmin2 extends AppCompatActivity {
         s3 = ev3.getText().toString();
         s4 = ev4.getText().toString();
         Button b1 = (Button)findViewById(R.id.button);
-
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),
                         "Inserted", Toast.LENGTH_SHORT).show();
             }});
-            }
     }
+}

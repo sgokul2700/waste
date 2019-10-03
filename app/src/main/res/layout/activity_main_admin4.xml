@@ -6,45 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainUserOutput">
 
-    <TextView android:text = "Waste Details" android:layout_width="wrap_content"
+    <TextView android:text = "Town" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview"
         android:textSize = "35dp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
-    <TextView android:text = "Waste ID:" android:layout_width="wrap_content"
+    <TextView android:text = "Town Id:" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview1"
         android:layout_marginTop="60dp"
         android:textSize = "25dp"
         android:layout_below="@+id/textview" />
 
-    <TextView android:text = "Waste Type:" android:layout_width="wrap_content"
+    <TextView android:text = "Town Name" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview2"
         android:layout_marginTop="60dp"
         android:textSize = "25dp"
         android:layout_below="@+id/textview1" />
 
-    <TextView android:text = "Level:" android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview3"
-        android:layout_marginTop="60dp"
-        android:textSize = "25dp"
-        android:layout_below="@+id/textview2" />
-
-    <TextView android:text = "Area Id:" android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview0"
-        android:layout_marginTop="60dp"
-        android:textSize = "25dp"
-        android:layout_below="@+id/textview3" />
-
     <EditText android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
-        android:id = "@+id/textview4"
         android:inputType="number"
+        android:id = "@+id/textview4"
         android:layout_marginTop="60dp"
         android:textSize = "20dp"
         android:layout_below="@+id/textview"
@@ -53,28 +39,12 @@
     <EditText android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview5"
+        android:inputType="number"
         android:layout_marginTop="60dp"
         android:textSize = "20dp"
         android:layout_below="@+id/textview1"
         android:layout_centerHorizontal = "true" />
 
-    <EditText android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview6"
-        android:layout_marginTop="60dp"
-        android:inputType="number"
-        android:textSize = "20dp"
-        android:layout_below="@+id/textview2"
-        android:layout_centerHorizontal = "true" />
-
-    <EditText android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview7"
-        android:inputType="number"
-        android:layout_marginTop="60dp"
-        android:textSize = "20dp"
-        android:layout_below="@+id/textview3"
-        android:layout_centerHorizontal = "true" />
 
     <Button
         android:id="@+id/button"
@@ -82,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal = "true"
         android:layout_marginBottom="40dp"
-        android:text="@string/insert"
+        android:text="Send"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

@@ -12,7 +12,7 @@
         android:id = "@+id/textview1"
         android:textSize = "35sp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal = "true"
-        android:layout_marginBottom="40dp"
-        android:text="@string/location"
+        android:layout_marginBottom="20dp"
+        android:text="Area"
         android:layout_below = "@+id/textview1"/>
 
     <Button
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_centerHorizontal = "true"
         android:layout_below = "@+id/button3"/>
 
@@ -39,8 +39,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/grievance"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_centerHorizontal = "true"
         android:layout_below = "@+id/button4"/>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Town"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button5"/>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taluk"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button6"/>
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suggestion"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button7"/>
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Mode"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button8"/>
 
 </RelativeLayout>

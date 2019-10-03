@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 public class MainAdmin1 extends AppCompatActivity {
     DatabaseHelper databaseHelper;
-    String s1,s2,s3;
-    EditText ev1,ev2,ev3;
+    String s1,s2,s3,s4;
+    EditText ev1,ev2,ev3,ev4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class MainAdmin1 extends AppCompatActivity {
         ev1=(EditText) findViewById(R.id.textview5);
         ev2=(EditText) findViewById(R.id.textview4);
         ev3=(EditText) findViewById(R.id.textview6);
+        ev4=(EditText) findViewById(R.id.textview7);
 
 
         Button b1 = (Button)findViewById(R.id.buttonArea);
@@ -29,6 +30,7 @@ public class MainAdmin1 extends AppCompatActivity {
                 s1 = ev1.getText().toString();
                 s2 = ev2.getText().toString();
                 s3 = ev3.getText().toString();
+                s4 = ev4.getText().toString();
                 if (s2.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Taluk Id", Toast.LENGTH_SHORT).show();
                     return;
@@ -39,6 +41,10 @@ public class MainAdmin1 extends AppCompatActivity {
                 }
                 else if (s3.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Area Name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (s4.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Town Id", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 else{

@@ -21,7 +21,11 @@
         <activity android:name=".MainUserOutput" />
         <activity android:name=".MainAdmin2" />
         <activity android:name=".MainAdmin3" />
-        <activity android:name=".MainAdmin1"></activity>
+        <activity android:name=".MainAdmin1" />
+        <activity android:name=".MainAdmin4" />
+        <activity android:name=".MainAdmin5" />
+        <activity android:name=".MainAdmin6" />
+        <activity android:name=".MainAdmin7"></activity>
     </application>
 
 </manifest>
