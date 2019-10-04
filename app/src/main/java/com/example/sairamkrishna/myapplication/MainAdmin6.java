@@ -28,13 +28,31 @@ public class MainAdmin6 extends AppCompatActivity {
                 s2 = ev2.getText().toString();
                 s3 = ev3.getText().toString();
                 s4 = ev4.getText().toString();
-                boolean test = databaseHelper.insertSuggestionData(s1,s2,s3,s4);
-                if(test)
-                    Toast.makeText(getApplicationContext(),
-                            "Inserted", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(),
-                            "Not Inserted", Toast.LENGTH_SHORT).show();
-            }});
+                if (s2.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Level", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (s1.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Method", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (s3.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Waste id", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (s4.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Solution", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else {
+                    boolean test = databaseHelper.insertSuggestionData(s1, s2, s3, s4);
+                    if (test)
+                        Toast.makeText(getApplicationContext(),
+                                "Inserted", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getApplicationContext(),
+                                "Not Inserted", Toast.LENGTH_SHORT).show();
+                }
+                }});
     }
 }

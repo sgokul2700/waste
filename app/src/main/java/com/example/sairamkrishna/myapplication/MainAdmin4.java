@@ -24,13 +24,23 @@ public class MainAdmin4 extends AppCompatActivity {
             public void onClick(View v) {
                 s1 = ev1.getText().toString();
                 s2 = ev2.getText().toString();
-                boolean test = databaseHelper.insertTownData(s1,s2);
-                if(test)
-                    Toast.makeText(getApplicationContext(),
-                            "Inserted", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(),
-                            "Not Inserted", Toast.LENGTH_SHORT).show();
-            }});
+                if (s2.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Town Id", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if (s1.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter Town name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else {
+                    boolean test = databaseHelper.insertTownData(s1, s2);
+                    if (test)
+                        Toast.makeText(getApplicationContext(),
+                                "Inserted", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getApplicationContext(),
+                                "Not Inserted", Toast.LENGTH_SHORT).show();
+                }
+                }});
     }
 }
