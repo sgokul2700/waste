@@ -24,6 +24,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String waste_id = "WASTE_ID";
     public static final String waste_type = "WASTE_TYPE";
     public static final String level = "LEVEL";
+    public static final String col_1 = "LEVEL";
+    public static final String col_2 = "LEVEL";
+    public static final String col_3 = "LEVEL";
     public DatabaseHelper(Context context) {
         super(context, databaseName, null, 1);
 
@@ -97,7 +100,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    /*public boolean insertData(String areaId, String talukId, String areaName){
+    public boolean insertData(String areaId, String talukId, String areaName){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(col_1,areaId);
@@ -108,7 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
-    }*/
+    }
     public Cursor getAllData(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor res = sqLiteDatabase.rawQuery("select * from "+area,null);

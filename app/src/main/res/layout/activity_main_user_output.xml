@@ -1,61 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainUserOutput">
+    tools:context=".MainAdmin">
 
-    <TextView android:text = "Info" android:layout_width="wrap_content"
+    <TextView android:text = "User Mode" android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
-        android:id = "@+id/textview"
-        android:textSize = "35dp"
+        android:id = "@+id/textview1"
+        android:textSize = "35sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
 
-    <TextView android:text = "Login:" android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview1"
-        android:layout_marginTop="60dp"
-        android:textSize = "25dp"
-        android:layout_below="@+id/textview" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal = "true"
+        android:layout_marginBottom="20dp"
+        android:text="Area"
+        android:layout_below = "@+id/textview1"/>
 
-    <TextView android:text = "Login:" android:layout_width="wrap_content"
-    android:layout_height = "wrap_content"
-    android:id = "@+id/textview2"
-    android:layout_marginTop="60dp"
-    android:textSize = "25dp"
-    android:layout_below="@+id/textview1" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button3"/>
 
-    <TextView android:text = "Login:" android:layout_width="wrap_content"
-    android:layout_height = "wrap_content"
-    android:id = "@+id/textview3"
-    android:layout_marginTop="60dp"
-    android:textSize = "25dp"
-    android:layout_below="@+id/textview2" />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grievance"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button4"/>
 
-    <TextView android:text = "ans" android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview4"
-        android:layout_marginTop="60dp"
-        android:textSize = "20dp"
-        android:layout_below="@+id/textview"
-        android:layout_centerHorizontal = "true" />
-
-    <TextView android:text = "ans" android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview5"
-        android:layout_marginTop="60dp"
-        android:textSize = "20dp"
-        android:layout_below="@+id/textview1"
-        android:layout_centerHorizontal = "true" />
-
-    <TextView android:text = "ans" android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview6"
-        android:layout_marginTop="60dp"
-        android:textSize = "20dp"
-        android:layout_below="@+id/textview2"
-        android:layout_centerHorizontal = "true" />
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suggestion"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@+id/button5"/>
 
 </RelativeLayout>

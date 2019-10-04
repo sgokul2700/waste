@@ -66,7 +66,7 @@ public class MainAdmin extends AppCompatActivity {
         b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent k = new Intent(MainAdmin.this, MainAdmin7.class);
+                Intent k = new Intent(MainAdmin.this, MainUser.class);
                 startActivity(k);
             }
         });

@@ -25,7 +25,6 @@
         <activity android:name=".MainAdmin4" />
         <activity android:name=".MainAdmin5" />
         <activity android:name=".MainAdmin6" />
-        <activity android:name=".MainAdmin7"></activity>
     </application>
 
 </manifest>
