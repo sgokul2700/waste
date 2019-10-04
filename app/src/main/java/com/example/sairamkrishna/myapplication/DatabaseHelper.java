@@ -43,12 +43,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table "+town+" (TOWN_ID integer, TOWN_NAME text,primary key(TOWN_ID)) ");
-        sqLiteDatabase.execSQL("create table "+taluk+" (TALUK_ID integer, TALUK_NAME text,TOWN_ID integer,primary key(TALUK_ID),foreign key(TOWN_ID) references TOWN) ");
-        sqLiteDatabase.execSQL("create table "+area+" (AREA_ID integer, AREA_NAME text,TALUK_ID integer,TOWN_ID integer,primary key(AREA_ID),foreign key(TALUK_ID) references TALUK, foreign key(TOWN_ID) references TOWN) ");
-        sqLiteDatabase.execSQL("create table "+waste+" (WASTE_ID integer, WASTE_TYPE integer, AREA_ID integer, LEVEL integer,primary key(WASTE_ID),foreign key(AREA_ID) references AREA) ");
-        sqLiteDatabase.execSQL("create table "+suggestion+" (LEVEL integer, METHOD  text, WASTE_ID integer, SOLUTION text, foreign key(WASTE_ID) references WASTE) ");
-        sqLiteDatabase.execSQL("create table "+user+" (ID integer,PASSWORD text,NAME text,AREA_ID integer,PHONENUMBER integer, EMAIL_ID text,USER_TYPE text,primary key(ID), foreign key(AREA_ID) references AREA) ");
-        sqLiteDatabase.execSQL("create table "+grievance+" (G_ID integer, AREA_ID integer, REASON varchar(300),ID integer,primary key(G_ID), foreign key(ID) references USER,foreign key(AREA_ID) references AREA) ");
+        sqLiteDatabase.execSQL("create table "+taluk+" (TALUK_ID integer, TALUK_NAME text,TOWN_ID integer,primary key(TALUK_ID),foreign key(TOWN_ID) references TOWN(TOWN_ID)) ");
+        sqLiteDatabase.execSQL("create table "+area+" (AREA_ID integer, AREA_NAME text,TALUK_ID integer,TOWN_ID integer,primary key(AREA_ID),foreign key(TALUK_ID) references TALUK(TALUK_ID), foreign key(TOWN_ID) references TOWN(TOWN_ID)) ");
+        sqLiteDatabase.execSQL("create table "+waste+" (WASTE_ID integer, WASTE_TYPE integer, AREA_ID integer, LEVEL integer,primary key(WASTE_ID),foreign key(AREA_ID) references AREA(AREA_ID)) ");
+        sqLiteDatabase.execSQL("create table "+suggestion+" (LEVEL integer, METHOD  text, WASTE_ID integer, SOLUTION text, foreign key(WASTE_ID) references WASTE(WASTE_ID)) ");
+        sqLiteDatabase.execSQL("create table "+user+" (ID integer,PASSWORD text,NAME text,AREA_ID integer,PHONENUMBER integer, EMAIL_ID text,USER_TYPE text,primary key(ID), foreign key(AREA_ID) references AREA(AREA_ID)) ");
+        sqLiteDatabase.execSQL("create table "+grievance+" (G_ID integer, AREA_ID integer, REASON varchar(300),ID integer,primary key(G_ID), foreign key(ID) references USER(ID),foreign key(AREA_ID) references AREA(AREA_ID)) ");
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -66,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
-    public boolean insertTalukData(String talukId, String talukName, String townId){
+    public boolean insertTalukData(String townId,String talukId, String talukName){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(taluk_id,talukId);
@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
-    public boolean insertAreaData(String areaId, String areaName, String talukId, String townId){
+    public boolean insertAreaData(String talukId, String areaId, String areaName, String townId){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(area_id,areaId);
@@ -174,6 +174,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
     public Cursor getAreaData(String areaID){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("select * from "+area+" where area_id = "+areaID,null);
+        return res;
+    }
+    public Cursor getWasteData(String areaID){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("select * from "+waste+" where area_id = "+areaID,null);
+        return res;
+    }
+    public Cursor getGrievanceData(String areaID){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("select * from "+grievance+" where area_id = "+areaID,null);
+        return res;
+    }
+    public Cursor getSuggestionData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("select * from "+suggestion,null);
+        return res;
+    }
+    public Cursor checkAreaData(String areaID){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor res = sqLiteDatabase.rawQuery("select * from "+area+" where area_id = "+areaID,null);
         return res;

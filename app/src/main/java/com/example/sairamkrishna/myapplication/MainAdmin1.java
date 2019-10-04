@@ -17,8 +17,8 @@ public class MainAdmin1 extends AppCompatActivity {
         setContentView(R.layout.activity_main_admin1);
 
         databaseHelper = new DatabaseHelper(this);
-        ev1=(EditText) findViewById(R.id.textview5);
-        ev2=(EditText) findViewById(R.id.textview4);
+        ev1=(EditText) findViewById(R.id.textview4);
+        ev2=(EditText) findViewById(R.id.textview5);
         ev3=(EditText) findViewById(R.id.textview6);
         ev4=(EditText) findViewById(R.id.textview7);
 
@@ -31,11 +31,11 @@ public class MainAdmin1 extends AppCompatActivity {
                 s2 = ev2.getText().toString();
                 s3 = ev3.getText().toString();
                 s4 = ev4.getText().toString();
-                if (s2.matches("")) {
+                if (s1.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Taluk Id", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if (s1.matches("")) {
+                else if (s2.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Area Id", Toast.LENGTH_SHORT).show();
                     return;
                 }

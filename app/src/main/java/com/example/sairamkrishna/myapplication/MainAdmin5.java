@@ -18,7 +18,7 @@ public class MainAdmin5 extends AppCompatActivity {
         ev1=(EditText) findViewById(R.id.textview4);
         ev2=(EditText) findViewById(R.id.textview5);
         ev3=(EditText) findViewById(R.id.textview6);
-
+        databaseHelper = new DatabaseHelper(this);
         Button b1 = (Button)findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,11 +26,11 @@ public class MainAdmin5 extends AppCompatActivity {
                 s1 = ev1.getText().toString();
                 s2 = ev2.getText().toString();
                 s3 = ev3.getText().toString();
-                if (s2.matches("")) {
+                if (s1.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Town Id", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if (s1.matches("")) {
+                else if (s2.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Taluk Id", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -39,7 +39,7 @@ public class MainAdmin5 extends AppCompatActivity {
                     return;
                 }
                 else {
-                    boolean test = databaseHelper.insertTalukData(s1, s2, s3);
+                    boolean test = databaseHelper.insertTalukData(s2, s3, s1);
                     if (test)
                         Toast.makeText(getApplicationContext(),
                                 "Inserted", Toast.LENGTH_SHORT).show();

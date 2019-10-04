@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Vector;
 
 public class MainUser extends AppCompatActivity {
     EditText ev;
@@ -27,10 +30,15 @@ public class MainUser extends AppCompatActivity {
             public void onClick(View v) {
                 ev = (EditText) findViewById(R.id.editText);
                 area_id=ev.getText().toString();
-                Cursor res = databaseHelper.getAreaData(area_id);
+                Cursor res = databaseHelper.checkAreaData(area_id);
                 if(res.getCount() == 0){ //if no data is present getCount() will be 0
-                    showMessage("Error","No data found");
+                    Toast.makeText(getApplicationContext(), "Invalid Area ID", Toast.LENGTH_SHORT).show();
                     return;}
+                /*Vector vector = new Vector();
+                while(res.moveToNext()){
+                    vector.add(res.getString(0));
+                }/*
+                    /*
                 StringBuffer buffer = new StringBuffer();   //To print
                 while(res.moveToNext()){
                     buffer.append("Area ID : "+res.getString(0)+"\n");
@@ -38,18 +46,14 @@ public class MainUser extends AppCompatActivity {
                     buffer.append("Area Name : "+res.getString(2)+"\n");
                 }
                 showMessage("Data",buffer.toString());
-                /*Intent i=new Intent(MainUser.this, MainUserOutput.class);
+                */
+                //if(vector.contains(area_id)){
+                    Intent i=new Intent(MainUser.this, MainUserOutput.class);
                 i.putExtra("AREA_ID",area_id);
-                startActivity(i);*/
-            }
+                startActivity(i);}
+          //  }
             });
 
     }
-    public void showMessage(String title, String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);    //Used to cancel after showing the message
-        builder.setTitle(title);    //Set the title of the message
-        builder.setMessage(message);    //Set the message
-        builder.show(); // to display the message
-    }
+
 }

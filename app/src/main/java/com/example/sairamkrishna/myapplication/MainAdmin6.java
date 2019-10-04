@@ -19,7 +19,7 @@ public class MainAdmin6 extends AppCompatActivity {
         ev2=(EditText) findViewById(R.id.textview5);
         ev3=(EditText) findViewById(R.id.textview6);
         ev4=(EditText) findViewById(R.id.textview7);
-
+        databaseHelper = new DatabaseHelper(this);
         Button b1 = (Button)findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,11 +28,11 @@ public class MainAdmin6 extends AppCompatActivity {
                 s2 = ev2.getText().toString();
                 s3 = ev3.getText().toString();
                 s4 = ev4.getText().toString();
-                if (s2.matches("")) {
+                if (s1.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Level", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if (s1.matches("")) {
+                else if (s2.matches("")) {
                     Toast.makeText(getApplicationContext(), "Please enter Method", Toast.LENGTH_SHORT).show();
                     return;
                 }
