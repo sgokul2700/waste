@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainAdmin2 extends AppCompatActivity {
+    DatabaseHelper databaseHelper;
     String s1,s2,s3,s4;
     EditText ev1,ev2,ev3,ev4;
     @Override
@@ -18,17 +19,23 @@ public class MainAdmin2 extends AppCompatActivity {
         ev2=(EditText) findViewById(R.id.textview5);
         ev3=(EditText) findViewById(R.id.textview6);
         ev4=(EditText) findViewById(R.id.textview7);
-        s1 = ev1.getText().toString();
-        s2 = ev2.getText().toString();
-        s3 = ev3.getText().toString();
-        s4 = ev4.getText().toString();
+
         Button b1 = (Button)findViewById(R.id.button);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "Inserted", Toast.LENGTH_SHORT).show();
+                s1 = ev1.getText().toString();
+                s2 = ev2.getText().toString();
+                s3 = ev3.getText().toString();
+                s4 = ev4.getText().toString();
+                boolean test = databaseHelper.insertWasteData(s1,s2,s3,s4);
+                if(test)
+                    Toast.makeText(getApplicationContext(),
+                            "Inserted", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(getApplicationContext(),
+                            "Not Inserted", Toast.LENGTH_SHORT).show();
             }});
             }
     }

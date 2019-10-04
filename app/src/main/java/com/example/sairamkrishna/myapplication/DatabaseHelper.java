@@ -24,6 +24,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String waste_id = "WASTE_ID";
     public static final String waste_type = "WASTE_TYPE";
     public static final String level = "LEVEL";
+    public static final String method = "METHOD";
+    public static final String solution = "SOLUTION";
+    public static final String id = "ID";
+    public static final String password = "PASSWORD";
+    public static final String name = "NAME";
+    public static final String phone_number = "PHONENUMBER";
+    public static final String email_id = "EMAIL_ID";
+    public static final String user_type = "USER_TYPE";
     public static final String col_1 = "LEVEL";
     public static final String col_2 = "LEVEL";
     public static final String col_3 = "LEVEL";
@@ -93,22 +101,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(area_id,areaId);
         contentValues.put(level,tlevel);
         //contentValues.put(col_3,areaName);
-        long result = sqLiteDatabase.insert(area,null,contentValues);
+        long result = sqLiteDatabase.insert(waste,null,contentValues);
         if(result == -1)
             return false;
         else
             return true;
     }
 
-    public boolean insertSuggestionData(String wasteId, String wasteType, String areaId, String tlevel){
+    public boolean insertSuggestionData(String tlevel, String tmethod, String wasteId, String tsolution){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(waste_id,wasteId);
-        contentValues.put(waste_type,wasteType);
-        contentValues.put(area_id,areaId);
         contentValues.put(level,tlevel);
+        contentValues.put(method,tmethod);
+        contentValues.put(waste_id,wasteId);
+        contentValues.put(solution,tsolution);
         //contentValues.put(col_3,areaName);
-        long result = sqLiteDatabase.insert(area,null,contentValues);
+        long result = sqLiteDatabase.insert(suggestion,null,contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean insertUserData(String tid, String tpassword, String tname, String areaId, String phoneNumber, String emailId, String userType){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(id,tid);
+        contentValues.put(password,tpassword);
+        contentValues.put(name,tname);
+        contentValues.put(area_id,areaId);
+        contentValues.put(phone_number,phoneNumber);
+        contentValues.put(email_id,emailId);
+        contentValues.put(user_type,userType);
+        //contentValues.put(col_3,areaName);
+        long result = sqLiteDatabase.insert(user,null,contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean insertGrievanceData(String gId, String areaId, String treason, String tid){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(id,gId);
+        contentValues.put(password,areaId);
+        contentValues.put(name,treason);
+        contentValues.put(area_id,tid);
+        //contentValues.put(col_3,areaName);
+        long result = sqLiteDatabase.insert(grievance,null,contentValues);
         if(result == -1)
             return false;
         else

@@ -48,7 +48,7 @@ public class MainAdmin1 extends AppCompatActivity {
                     return;
                 }
                 else{
-                    boolean test = databaseHelper.insertData(s1,s2,s3);
+                    boolean test = databaseHelper.insertAreaData(s1,s2,s3,s4);
                     if(test)
                         Toast.makeText(getApplicationContext(),
                                 "Inserted", Toast.LENGTH_SHORT).show();
