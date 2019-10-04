@@ -34,13 +34,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table "+town+" (TOWN_ID numeric, TOWN_NAME varchar(100),primary key(TOWN_ID)) ");
-        sqLiteDatabase.execSQL("create table "+taluk+" (TALUK_ID numeric, TALUK_NAME varchar(100),TOWN_ID numeric,primary key(TALUK_ID),foreign key(TOWN_ID) references TOWN) ");
-        sqLiteDatabase.execSQL("create table "+area+" (AREA_ID numeric, AREA_NAME varchar(100),TALUK_ID numeric,TOWN_ID numeric,primary key(AREA_ID),foreign key(TALUK_ID) references TALUK, foreign key(TOWN_ID) references TOWN) ");
-        sqLiteDatabase.execSQL("create table "+waste+" (WASTE_ID numeric, WASTE_TYPE numeric, AREA_ID numeric, LEVEL numeric,primary key(WASTE_ID),foreign key(AREA_ID) references AREA) ");
-        sqLiteDatabase.execSQL("create table "+suggestion+" (LEVEL numeric, METHOD  numeric, WASTE_ID numeric, SOLUTION numeric, foreign key(WASTE_ID) references WASTE) ");
-        sqLiteDatabase.execSQL("create table "+user+" (ID numeric,PASSWORD varchar(100),NAME varchar(100),AREA_ID numeric,PHONENUMBER numeric, EMAIL_ID varchar(100),USER_TYPE varchar(100),primary key(ID), foreign key(AREA_ID) references AREA) ");
-        sqLiteDatabase.execSQL("create table "+grievance+" (G_ID numeric, AREA_ID numeric, REASON varchar(300),ID numeric,primary key(G_ID), foreign key(ID) references USER,foreign key(AREA_ID) references AREA) ");
+        sqLiteDatabase.execSQL("create table "+town+" (TOWN_ID integer, TOWN_NAME text,primary key(TOWN_ID)) ");
+        sqLiteDatabase.execSQL("create table "+taluk+" (TALUK_ID integer, TALUK_NAME text,TOWN_ID integer,primary key(TALUK_ID),foreign key(TOWN_ID) references TOWN) ");
+        sqLiteDatabase.execSQL("create table "+area+" (AREA_ID integer, AREA_NAME text,TALUK_ID integer,TOWN_ID integer,primary key(AREA_ID),foreign key(TALUK_ID) references TALUK, foreign key(TOWN_ID) references TOWN) ");
+        sqLiteDatabase.execSQL("create table "+waste+" (WASTE_ID integer, WASTE_TYPE integer, AREA_ID integer, LEVEL integer,primary key(WASTE_ID),foreign key(AREA_ID) references AREA) ");
+        sqLiteDatabase.execSQL("create table "+suggestion+" (LEVEL integer, METHOD  text, WASTE_ID integer, SOLUTION text, foreign key(WASTE_ID) references WASTE) ");
+        sqLiteDatabase.execSQL("create table "+user+" (ID integer,PASSWORD text,NAME text,AREA_ID integer,PHONENUMBER integer, EMAIL_ID text,USER_TYPE text,primary key(ID), foreign key(AREA_ID) references AREA) ");
+        sqLiteDatabase.execSQL("create table "+grievance+" (G_ID integer, AREA_ID integer, REASON varchar(300),ID integer,primary key(G_ID), foreign key(ID) references USER,foreign key(AREA_ID) references AREA) ");
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -86,6 +86,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean insertWasteData(String wasteId, String wasteType, String areaId, String tlevel){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(waste_id,wasteId);
+        contentValues.put(waste_type,wasteType);
+        contentValues.put(area_id,areaId);
+        contentValues.put(level,tlevel);
+        //contentValues.put(col_3,areaName);
+        long result = sqLiteDatabase.insert(area,null,contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean insertSuggestionData(String wasteId, String wasteType, String areaId, String tlevel){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(waste_id,wasteId);
