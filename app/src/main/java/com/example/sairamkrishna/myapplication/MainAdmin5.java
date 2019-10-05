@@ -35,11 +35,11 @@ public class MainAdmin5 extends AppCompatActivity {
                     return;
                 }
                 else if (s3.matches("")) {
-                    Toast.makeText(getApplicationContext(), "Please enter Town", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please enter Taluk name", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 else {
-                    boolean test = databaseHelper.insertTalukData(s2, s3, s1);
+                    boolean test = databaseHelper.insertTalukData(s1, s2, s3);
                     if (test)
                         Toast.makeText(getApplicationContext(),
                                 "Inserted", Toast.LENGTH_SHORT).show();

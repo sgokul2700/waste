@@ -23,17 +23,20 @@ public class MainUser extends AppCompatActivity {
         setContentView(R.layout.activity_main_user);
         databaseHelper = new DatabaseHelper(this);
 
-       Button  b1 = (Button)findViewById(R.id.button);
+        Button b1 = (Button) findViewById(R.id.button);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ev = (EditText) findViewById(R.id.editText);
-                area_id=ev.getText().toString();
+                area_id = ev.getText().toString();
                 Cursor res = databaseHelper.checkAreaData(area_id);
-                if(res.getCount() == 0){ //if no data is present getCount() will be 0
+                if (res.getCount() == 0) { //if no data is present getCount() will be 0
                     Toast.makeText(getApplicationContext(), "Invalid Area ID", Toast.LENGTH_SHORT).show();
-                    return;}
+                    return;
+                }
+                res.moveToNext();
+                String temp = res.getString(0);
                 /*Vector vector = new Vector();
                 while(res.moveToNext()){
                     vector.add(res.getString(0));
@@ -48,12 +51,13 @@ public class MainUser extends AppCompatActivity {
                 showMessage("Data",buffer.toString());
                 */
                 //if(vector.contains(area_id)){
-                    Intent i=new Intent(MainUser.this, MainUserOutput.class);
-                i.putExtra("AREA_ID",area_id);
-                startActivity(i);}
-          //  }
-            });
+                Intent i = new Intent(MainUser.this, MainUserOutput.class);
+                i.putExtra("AREA_ID", area_id);
+                startActivity(i);
+            }
+            //  }
+        });
 
-    }
+        }
 
 }

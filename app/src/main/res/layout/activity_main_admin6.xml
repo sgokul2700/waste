@@ -53,7 +53,7 @@
     <EditText android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview5"
-        android:inputType="number"
+
         android:layout_marginTop="60dp"
         android:textSize = "20dp"
         android:layout_below="@+id/textview1"
@@ -63,6 +63,7 @@
         android:layout_height = "wrap_content"
         android:id = "@+id/textview6"
         android:layout_marginTop="60dp"
+        android:inputType="number"
         android:textSize = "20dp"
         android:layout_below="@+id/textview2"
         android:layout_centerHorizontal = "true" />
@@ -70,7 +71,6 @@
     <EditText android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview7"
-        android:inputType="number"
         android:layout_marginTop="60dp"
         android:textSize = "20dp"
         android:layout_below="@+id/textview3"
